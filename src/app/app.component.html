@@ -12,23 +12,23 @@
           <ion-icon name="home" slot="start"></ion-icon>
           <ion-label> Home </ion-label>
         </ion-item>
+       
+        <ion-item  [routerLink]="['/journal']">
+          <ion-icon name="logo-angular" slot="start"></ion-icon>
+         <ion-label> Journal  </ion-label>
+        </ion-item>
+        <ion-item  [routerLink]="['/article']">
+          <ion-icon name="book-outline" slot="start"></ion-icon>
+          <ion-label> Article </ion-label>
+        </ion-item>
+        <ion-item  [routerLink]="['/table']">
+          <ion-icon name="logo-android" slot="start"></ion-icon>
+          <ion-label> Table of Content </ion-label>
+        </ion-item>
         <ion-item [routerLink]="['/login']">
           <ion-icon name ="log-in" slot="start"></ion-icon> 
           <ion-label> Login </ion-label>
         </ion-item>
-        <ion-item>
-          <ion-icon name="logo-angular" slot="start"></ion-icon>
-         <ion-label> Angular </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="logo-apple" slot="start"></ion-icon>
-          <ion-label> Apple  </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="logo-android" slot="start"></ion-icon>
-          <ion-label> Android </ion-label>
-        </ion-item>
-        
       </ion-list>
     </ion-content>
   </ion-menu>
