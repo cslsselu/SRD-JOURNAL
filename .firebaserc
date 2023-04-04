@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "srd-journal"
+  },
+  "targets": {
+    "srd-journal": {
+      "hosting": {
+        "app": [
+          "srd-journal"
+        ]
+      }
+    }
+  }
+}

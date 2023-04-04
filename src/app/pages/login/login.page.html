@@ -7,6 +7,66 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+	<ion-grid>
+	  <ion-row>
+		<ion-col size="6" class="company-info">
+		  <h1>SRD-JOURNAL</h1>
+		  <p>Company Description</p>
+		  <!-- Add any other company-related information here -->
+		</ion-col>
+		<div></div>
 
-</ion-content>
+		
+  
+		<ion-col size="5.5" class="login-form">
+		  <form (ngSubmit)="login()" [formGroup]="credentials" class="form">
+			<ion-item  class="ion-input">
+			  <ion-input type="email" placeholder="Email" formControlName="email"  autocomplete="off"></ion-input>
+			  <ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">
+				Email is invalid!!
+			  </ion-note>
+			</ion-item>
+			<ion-item  class="ion-input">
+			  <ion-input type="password" placeholder="Password" formControlName="password" autocomplete="off"></ion-input>
+			  <ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">
+				Password needs to be at least 6 characters!
+			  </ion-note>
+			</ion-item>
+			<ion-item class="buttons">
+			  <ion-button class="btn" type="submit" expand="block"  [disabled]="!credentials.valid">Log-in</ion-button>
+			  <ion-button class="btn" type="button" expand="block" color="secondary" (click)="register()">Create account</ion-button>
+			</ion-item>
+		  </form>
+		</ion-col>
+	  </ion-row>
+	</ion-grid>
+  </ion-content>
+  
+  <!-- <ion-content class="ion-padding">
+	<form (ngSubmit)="login()" [formGroup]="credentials" class="form">
+		
+
+		<ion-item fill="solid" class="ion-input">
+			<ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+			<ion-note slot="error" *ngIf="(email?.dirty || email?.touched) && email?.errors">
+
+				Email is invalid!!</ion-note
+			>
+		</ion-item>
+		<ion-item fill="solid" class="ion-margin-bottom">
+			<ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+			<ion-note slot="error" *ngIf="(password?.dirty || password?.touched) && password?.errors">
+
+				Password needs to be atleast 6 characters!</ion-note
+			>
+		</ion-item>
+		<ion-item class="buttons">
+		<ion-button class="login-btn" type="submit" expand="block" [disabled]="!credentials.valid">Log in</ion-button>
+		<ion-button class="signup-btn" type="button" expand="block" color="secondary" (click)="register()"
+			>Create account</ion-button
+		>
+		</ion-item>
+		
+	</form>
+</ion-content> -->

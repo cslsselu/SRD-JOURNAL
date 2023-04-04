@@ -1,16 +1,31 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { redirectUnauthorizedTo, redirectLoggedInTo, canActivate } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
 
 const routes: Routes = [
+  
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+		path: '',
+		loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginPageModule),
+		...canActivate(redirectLoggedInToHome)
+	},
+	{
+		path: 'home',
+		loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
+		...canActivate(redirectUnauthorizedToLogin)
+	},
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  // },
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
@@ -26,7 +41,12 @@ const routes: Routes = [
   {
     path: 'table',
     loadChildren: () => import('./pages/table/table.module').then( m => m.TablePageModule)
-  }
+  }, 
+  {
+    path: '**',
+		redirectTo: '',
+		pathMatch: 'full'
+	}
 
 
 ];
