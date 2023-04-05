@@ -1,123 +1,109 @@
-  ion-grid{
-    
-    background-image: url('../../../assets/bgimg.jpg');
-    width: 90%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
-    padding: none;
-   
-
+ion-grid {
+  background-image: url("../../../assets/bgimg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 75%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  padding: none;
+}
+ion-item-divider {
+  border-color: black;
+}
+div {
+  border-left: 5px solid #353535;
+  height: 90%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+ion-row {
+  width: 100%;
+  height: 80%;
+}
+.login-form {
+  margin: auto;
+  height: 100%;
+  background-color: rgb(214, 201, 190);
+  .input {
+    color: black;
   }
-  ion-item-divider{
-    border-color: black;
-  }
-   div{
-    border-left: 5px solid black; 
-    height: 90%;
-   margin-top: auto;
-   margin-bottom: auto;
-    
-   }
-  ion-row{
-    width: 80%;
-    height: 70%;
-    background-image: url('../../../assets/bgimg.jpg');
-
-  }
-
   .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
-    height: 90%;
-    width: 65%;
-    margin-right: auto;
-    
-   
-  }
-   ion-item {
-    --background: transparent; /* remove the default background color */
-    
-  }
-
-  .company-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: right;
     height: 100%;
-    padding: 15px;
-   }
+    width: 100%;
+    background-color: rgb(214, 202, 185);
+    padding: 18px;
 
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 20px;
-   
+    .ion-input {
+      --border-style: none;
+    }
   }
-  ion-note {
-    background-color: transparent !important;
-  }
+}
+ion-item {
+  --background: transparent; /* remove the default background color */
+}
 
+.login-btn {
+  width: 100%;
+  font-size: 80%;
+  margin-top: 35px;
+
+  --background: #333333;
+  --border-style: none;
+}
+.login-btn + .login-btn {
+  margin-left: 15px;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  height: 100%;
+  padding: 15px;
+  color: #353535;
   h1 {
     font-size: 3rem;
     margin-bottom: 5px;
   }
+}
 
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-   
-  }
+ion-note {
+  background-color: transparent !important;
+}
 
-  .buttons {
-    display: flex;
-    width: 110%;
-    --border-style: none;
-    padding: 10px ;
-    
-  }
-  .btn {
-    font-size: 90%;
-    margin-right: auto;
-    
-  }
+p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
 
-
-
-  
 //   ion-item {
 //     background-color: transparent !important;
 //     .ion-input {
 //        font-size: 16px;
 //         padding: 10px;
-//         --background: transparent; 
-      
+//         --background: transparent;
+
 //     }
-   
-    //   background-color: transparent !important;
-    //   justify-content: flex-end;
-   
+
+//   background-color: transparent !important;
+//   justify-content: flex-end;
+
 //       .btn {
 //         font-size: 80%;
 //         // color: black;
 //         // padding: 10px;
-        
+
 //         //   background-color: black;
-        
+
 //       }
-    
-    
-
-
 
 //  .ion-padding{
 //     background-image: url('../../../assets/bgimg.jpg');
@@ -137,10 +123,7 @@
 //  ion-item {
 //     --background: transparent; /* remove the default background color */
 //   }
-  
+
 //   ion-button {
 //     width: 100%;
 //   }
-  
-
-
