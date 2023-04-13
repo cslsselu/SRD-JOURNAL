@@ -51,6 +51,7 @@ export class LoginPage implements OnInit {
 		await loading.dismiss();
 
 		if (user) {
+			
 			this.router.navigateByUrl('/home', { replaceUrl: true });
 		} else {
 			this.showAlert('Registration failed', 'Please try again!');
@@ -65,6 +66,7 @@ export class LoginPage implements OnInit {
 		await loading.dismiss();
 
 		if (user) {
+			console.log("useremail from login",user.user.email);
 			this.router.navigateByUrl('/home', { replaceUrl: true });
 		} else {
 			this.showAlert('Login failed', 'Please try again!');
