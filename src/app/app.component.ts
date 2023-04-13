@@ -7,8 +7,8 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private authService: AuthService) {
-  }
+  
+  constructor(public authService: AuthService) {}
 
   // Getter function that returns a boolean value indicating if the user is signed in or not
   get isUserSignedIn(): boolean {

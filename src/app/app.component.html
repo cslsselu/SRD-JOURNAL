@@ -2,7 +2,7 @@
   <ion-menu menuId="main-menu" content-id="main">
     <ion-header>
       <ion-toolbar [routerLink]="['/home']">
-        <ion-title>Menu</ion-title>
+        <ion-title>{{ isUserSignedIn ?  authService.user?.email : 'Menu' }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
