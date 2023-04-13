@@ -2,7 +2,9 @@
   <ion-menu menuId="main-menu" content-id="main">
     <ion-header>
       <ion-toolbar [routerLink]="['/home']">
-        <ion-title>Menu</ion-title>
+        <ion-title>{{
+          isUserSignedIn ? authService.user?.email : "Menu"
+        }}</ion-title>
       </ion-toolbar>
       <!-- <ion-icon name="log-out-outline"></ion-icon> -->
     </ion-header>
@@ -26,10 +28,20 @@
           <ion-icon name="logo-android" slot="start"></ion-icon>
           <ion-label> Table of Content </ion-label>
         </ion-item>
-        <ion-item [routerLink]="['/login']" (click)="closeMenu()">
-          <ion-icon name="log-in" slot="start"></ion-icon>
-          <ion-label> Login / Logout </ion-label>
+        <ion-item
+          *ngIf="isUserSignedIn; else loginButton"
+          (click)="logout()"
+          (click)="closeMenu()"
+        >
+          <ion-icon name="log-out" slot="start"></ion-icon>
+          <ion-label>Logout</ion-label>
         </ion-item>
+        <ng-template #loginButton>
+          <ion-item [routerLink]="['/login']" (click)="closeMenu()">
+            <ion-icon name="log-in" slot="start"></ion-icon>
+            <ion-label> Login</ion-label>
+          </ion-item>
+        </ng-template>
       </ion-list>
     </ion-content>
   </ion-menu>
