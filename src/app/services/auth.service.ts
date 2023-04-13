@@ -6,10 +6,6 @@ import {
 	signOut
 } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-// import  firebase from 'firebase/app';
-// import 'firebase/auth';
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +40,10 @@ export class AuthService {
 		  // Redirect to login page
 		  this.router.navigateByUrl('/login');
 	
+	}
+	//getter method to get current user
+	
+	get user(){
+		return this.auth.currentUser;
 	}
 }
