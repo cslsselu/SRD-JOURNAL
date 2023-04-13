@@ -1,17 +1,11 @@
-ion-content{
-    background-color: white;
+.search-bar {
+  width: 30%;
+  box-shadow: 0px 0px 10px rgb(253, 251, 251);
+  margin: auto;
+  margin-top: 20px;
 }
 
-ion-searchbar{
-    width: 30%;
-    // background-color: white;
-    box-shadow: 0px 0px 10px rgb(253, 251, 251);
-    margin: auto;
-    margin-top: 20px;
-}
-
-ion-card-content{
-    text-align: center;
-    // margin-left: 100PX;
-     margin-top: 20px;
+.search-list {
+  text-align: center;
+  margin-top: 20px;
 }

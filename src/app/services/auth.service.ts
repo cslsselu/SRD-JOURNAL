@@ -5,6 +5,7 @@ import {
 	createUserWithEmailAndPassword,
 	signOut
 } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 // import  firebase from 'firebase/app';
 // import 'firebase/auth';
 
@@ -14,7 +15,7 @@ import {
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private auth: Auth) { }
+  constructor(private auth: Auth, private router: Router) { }
 
   async register({ email, password }: { email: string, password: string }) {
 		try {
@@ -35,6 +36,13 @@ export class AuthService {
 	}
 
 	logout() {
-		return signOut(this.auth);
+		// return signOut(this.auth);
+
+		  // Clear authentication data
+		  localStorage.removeItem('jwt');
+
+		  // Redirect to login page
+		  this.router.navigateByUrl('/login');
+	
 	}
 }

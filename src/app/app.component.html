@@ -1,9 +1,10 @@
 <ion-app>
-  <ion-menu menuId = "main-menu" content-id="main">
+  <ion-menu menuId="main-menu" content-id="main">
     <ion-header>
       <ion-toolbar [routerLink]="['/home']">
         <ion-title>Menu</ion-title>
       </ion-toolbar>
+      <!-- <ion-icon name="log-out-outline"></ion-icon> -->
     </ion-header>
 
     <ion-content>
@@ -12,28 +13,27 @@
           <ion-icon name="home" slot="start"></ion-icon>
           <ion-label> Home </ion-label>
         </ion-item>
-       
-        <ion-item  [routerLink]="['/journal']">
+
+        <ion-item [routerLink]="['/journal']">
           <ion-icon name="logo-angular" slot="start"></ion-icon>
-         <ion-label> Journal  </ion-label>
+          <ion-label> Journal </ion-label>
         </ion-item>
-        <ion-item  [routerLink]="['/article']">
+        <ion-item [routerLink]="['/article']">
           <ion-icon name="book-outline" slot="start"></ion-icon>
           <ion-label> Article </ion-label>
         </ion-item>
-        <ion-item  [routerLink]="['/table']">
+        <ion-item [routerLink]="['/table']">
           <ion-icon name="logo-android" slot="start"></ion-icon>
           <ion-label> Table of Content </ion-label>
         </ion-item>
         <ion-item [routerLink]="['/login']">
-          <ion-icon name ="log-in" slot="start"></ion-icon> 
-          <ion-label> Login </ion-label>
+          <ion-icon name="log-in" slot="start"></ion-icon>
+          <ion-label> Login / Logout </ion-label>
         </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
-
 
 <!-- <ion-icon name="log-out-outline"></ion-icon> -->
