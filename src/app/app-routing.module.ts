@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
-import { AuthGuard } from './auth-guard/auth.guard';
+import { redirectUnauthorizedTo, redirectLoggedInTo, canActivate } from '@angular/fire/auth-guard';
+// import { AuthGuard } from '../guards/auth.guard';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
@@ -11,35 +11,38 @@ const routes: Routes = [
   {
 		path: '',
 		loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginPageModule),
-		canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectLoggedInToHome}
+		...canActivate(redirectLoggedInToHome)
 	},
 	{
 		path: 'home',
 		loadChildren: () => import('./pages/home/home.module').then((m) => m.HomePageModule),
-    canActivate: [AuthGuard],
-    data: { authGuardPipe: redirectUnauthorizedToLogin}
- },
-   {
+		// ...canActivate(redirectUnauthorizedToLogin) 
+    // canActivate: [AuthGuard],
+	},
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  // },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    canActivate: [AuthGuard]
-
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'journal',
-    loadChildren: () => import('./pages/journal/journal.module').then( m => m.JournalPageModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./pages/journal/journal.module').then( m => m.JournalPageModule)
   },
   {
     path: 'article',
-    loadChildren: () => import('./pages/article/article.module').then( m => m.ArticlePageModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./pages/article/article.module').then( m => m.ArticlePageModule)
   },
   {
     path: 'table',
-    loadChildren: () => import('./pages/table/table.module').then( m => m.TablePageModule),
-    canActivate: [AuthGuard]
+    loadChildren: () => import('./pages/table/table.module').then( m => m.TablePageModule)
   }, 
   {
     path: '**',
